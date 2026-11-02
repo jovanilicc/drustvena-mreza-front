@@ -1,5 +1,13 @@
 function getAll() {
-  fetch("https://localhost:44360/api/korisnici")
+  let url = "https://localhost:44360/api/korisnici";
+
+  let queryParams = new URLSearchParams(window.location.search).get("id");
+
+  if (queryParams) {
+    url = `https://localhost:44360/api/grupe/${queryParams}/korisnici`;
+  }
+
+  fetch(url)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Request failed. Status: " + response.status);
@@ -24,9 +32,6 @@ function renderData(data) {
 
   table.innerHTML = "";
 
-  let tableHeader = document.querySelector("table thead"); // Zaglavlje tabele
-
-  // Za svaku knjigu dodajemo red u tabeli koji ima dve ćelije (naziv i autor)
   data.forEach((korisnik) => {
     let newRow = document.createElement("tr");
 
@@ -61,8 +66,8 @@ function renderData(data) {
     editBtn.textContent = "Edit";
     editBtn.addEventListener("click", () => {
       let id = korisnik.id;
-      let serchParams = new URLSearchParams();
-      serchParams.set(id);
+      let searchParams = new URLSearchParams();
+      searchParams.set("id", id);
       // fetch();
     });
     cell5.appendChild(editBtn);
