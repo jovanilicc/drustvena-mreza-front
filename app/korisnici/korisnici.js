@@ -1,6 +1,11 @@
+const addNew = () => {
+  const addBtn = document.getElementById("addNew");
+  addBtn.addEventListener("click", () => {
+    window.location.href = "../novi-korisnik";
+  });
+};
 function getAll() {
   let url = "https://localhost:44360/api/korisnici";
-
   let queryParams = new URLSearchParams(window.location.search).get("id");
 
   if (queryParams) {
@@ -29,9 +34,7 @@ function getAll() {
 
 function renderData(data) {
   let table = document.querySelector("table tbody");
-
   table.innerHTML = "";
-
   data.forEach((korisnik) => {
     let newRow = document.createElement("tr");
 
@@ -42,7 +45,6 @@ function renderData(data) {
     let cell2 = document.createElement("td");
     cell2.textContent = korisnik.ime;
     newRow.appendChild(cell2);
-
     table.appendChild(newRow);
     let cell3 = document.createElement("td");
     cell3.textContent = korisnik.prezime;
@@ -65,10 +67,7 @@ function renderData(data) {
     let editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.addEventListener("click", () => {
-      let id = korisnik.id;
-      let searchParams = new URLSearchParams();
-      searchParams.set("id", id);
-      // fetch();
+      window.location.href = "../novi-korisnik/index.html?id=" + korisnik.id;
     });
     cell5.appendChild(editBtn);
 
@@ -76,6 +75,7 @@ function renderData(data) {
 
     table.appendChild(newRow);
   });
+  addNew();
 }
 
 document.addEventListener("DOMContentLoaded", getAll);

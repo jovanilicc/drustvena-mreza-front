@@ -1,0 +1,22 @@
+@use "../styles/globals";
+
+.addForm {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid globals.$text-color-primary;
+  padding: 20px;
+  border-radius: 5px;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: globals.$text-color-primary;
+      font-weight: bold;
+    }
+  }
+}

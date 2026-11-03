@@ -19,3 +19,15 @@
     padding: 5px;
   }
 }
+.add {
+  margin: 20px auto 0;
+  max-width: 300px;
+  button {
+    width: 100%;
+    border: 2px solid globals.$text-color-primary;
+    border-radius: 4px;
+    &:hover {
+      border: 2px solid globals.$accent-color;
+    }
+  }
+}

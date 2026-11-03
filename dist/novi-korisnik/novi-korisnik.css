@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+a {
+  text-decoration: none;
+  color: #004e4c;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  padding: 5px;
+  font-weight: bold;
+  border: 2px solid;
+}
+a:hover {
+  color: #50ffee;
+  background-color: #004e4c;
+  border: 2px solid #50ffee;
+}
+
+button {
+  border: none;
+  background: #50ffee;
+  color: #004e4c;
+  font-weight: bold;
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  color: #50ffee;
+  background-color: #004e4c;
+}
+
+.navbar {
+  background-color: #59e6b5;
+  color: #004e4c;
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+  align-items: center;
+}
+
+.addForm {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #004e4c;
+  padding: 20px;
+  border-radius: 5px;
+}
+.addForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.addForm form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #004e4c;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=novi-korisnik.css.map */
